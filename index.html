@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title> Even Odd Finder </title>
+	<style>
+		* {font-size:70px; font-family:Agency FB;}
+		body { background-color:gray; }
+		h1 { background-color:black;color:white;width:70%;border-radius:100px;}
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			if(num.value =="")
+			{
+				alert("Please enter any number");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+
+			let n = parseInt(num.value);
+			let msg = "";
+			if(n % 2 == 0)
+				msg = "The number is Even";
+			else
+				msg = "The number is Odd";
+			ans.innerHTML = msg;
+		}
+	</script>
+</head>
+<body>
+<center>
+<h1> Even Odd Finder </h1>
+<form onsubmit="find()">
+<input type="number" placeholder="Enter any number" id="num" />
+<br><br>
+<input type="submit" value="Enter" />
+</form>
+<h2  Id="ans" />
+</center>
+</body>
+</html>
